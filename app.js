@@ -1,5 +1,5 @@
 window.onload = () => {
-	const form1 = document.querySelector("#addForm");
+	const form1 = document.querySelector("#addForm");       // Creating objects of elements using DOM
 
 	let items = document.getElementById("items");
 	let submit = document.getElementById("submit");
@@ -10,11 +10,11 @@ window.onload = () => {
 	items.addEventListener("click", removeItem);
 };
 
-function addItem(e) {
+function addItem(e) {                               //Add Tasks
 	e.preventDefault();
 
 	if (submit.value != "Submit") {
-		console.log("Hello");
+		console.alert("Task added!");
 
 		editItem.target.parentNode.childNodes[0].data
 			= document.getElementById("item").value;
@@ -66,7 +66,7 @@ function addItem(e) {
 	items.appendChild(li);
 }
 
-function removeItem(e) {
+function removeItem(e) {                                  //Remove Tasks
 	e.preventDefault();
 	if (e.target.classList.contains("delete")) {
 		if (confirm("Are you Sure?")) {
